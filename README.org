@@ -3,3 +3,26 @@
 ** Related Prata Ut Repositories
    - [[https://github.com/Plommonsorbet/prataut-backend][prataut-backend]]
    - [[https://github.com/Plommonsorbet/prataut-frontend][prataut-frontend]]
+** Technical Documentation
+*** Backend
+**** Libs
+     - [[https://github.com/ohyo-io/wampire][ohyo-io/wampire: Rust implementation of a WAMP (Web Application Messaging Protocol) client and router]]
+     - [[https://github.com/mitsuhiko/redis-rs][mitsuhiko/redis-rs: Redis library for rust]]
+**** Rust backend for websocket
+***** Description
+      The backend will be written in rust and will communicate with clients over websockets or more specifically the [[https://wamp-proto.org/][wamp protocol]].
+      
+      Authentication won't be necessary, neither will cookies be. A session is started with the backend once you go to the website, when available you will be added to a chat with another person, if someone at any point closes the tab you'll lose the session and be kicked out. Which will be okay for now.
+      
+      For passing messages the initial plan is to use redis as a message queue to pass messages between users. 
+
+      The interfacing with the client, we will use wampire as a router for the publishing and subscription. To start of only one broker / dealer will be used even though it could be distributed.
+
+*** Frontend
+    tech description here.
+
+** Could Be Cool If We Have Time
+*** Cookies
+*** Going fully async
+*** End to end encryption?
+*** Going distributed with wamp.
